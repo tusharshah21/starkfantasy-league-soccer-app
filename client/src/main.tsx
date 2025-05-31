@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom"; 
 
 import App from "./App.tsx";
 
@@ -34,15 +35,17 @@ async function main() {
 
     createRoot(document.getElementById("root")!).render(
         <StrictMode>
-            <DojoSdkProvider
-                sdk={sdk}
-                dojoConfig={dojoConfig}
-                clientFn={setupWorld}
-            >
-                <StarknetProvider>
-                    <App />
-                </StarknetProvider>
-            </DojoSdkProvider>
+            <BrowserRouter> {/* ✅ Wrapping routing context */}
+                <DojoSdkProvider
+                    sdk={sdk}
+                    dojoConfig={dojoConfig}
+                    clientFn={setupWorld}
+                >
+                    <StarknetProvider>
+                        <App />
+                    </StarknetProvider>
+                </DojoSdkProvider>
+            </BrowserRouter>
         </StrictMode>
     );
 }
