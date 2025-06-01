@@ -25,7 +25,7 @@ export default function StickyNavbar() {
                 </div>
             </div>
 
-            {/* Mobile Menu (optional) */}
+            {/* Mobile Menu */}
             <div className="flex flex-col lg:hidden mt-4 space-y-2 text-white text-sm">
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
