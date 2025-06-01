@@ -1,10 +1,11 @@
-// src/app/landing/support/Support.tsx
-
+import StickyNavbar from "../../components/StickyNavbar";
 
 const Support = () => {
   return (
-    <div className="bg-[#0F111A] text-white min-h-screen py-16 px-4 sm:px-8">
-      <div className="max-w-4xl mx-auto space-y-10">
+    <div className="bg-[#0F111A] text-white min-h-screen">
+      <StickyNavbar />
+
+      <div className="max-w-4xl mx-auto space-y-10 py-16 px-4 sm:px-8">
         {/* Page Title */}
         <h1 className="text-4xl font-bold">Support</h1>
 
@@ -28,7 +29,7 @@ const Support = () => {
             As a continuously evolving project, StarkFantasy League thrives on community contributions. 
             If you’re interested in lending your expertise, we warmly invite you to explore our 
             <a
-              href="https://github.com" // Replace with actual repo link
+              href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:underline mx-1"
@@ -79,4 +80,3 @@ const Support = () => {
 };
 
 export default Support;
-

@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Support from "./app/landing/support/Support";
 import { Link } from "react-router-dom";
 import Footer from "./app/components/Footer";
+import Rules from "./app/landing/rules/Rules";
 
 
 import { ModelsMapping } from "./typescript/models.gen.ts";
@@ -45,10 +46,15 @@ function GameUI() {
         <>
             <WalletAccount />
 
-            <div className="mb-4">
+            <div className="mt-4 md:mb-2 flex space-x-2">
                 <Link to="/landing/support">
                     <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded">
                         Support
+                    </button>
+                </Link>
+                <Link to="/landing/rules">
+                    <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded">
+                        Rules
                     </button>
                 </Link>
             </div>
@@ -157,6 +163,8 @@ function App() {
         <div className="bg-black min-h-screen w-full p-4 sm:p-8">
             <div className="max-w-7xl mx-auto">
                 <Routes>
+                    <Route path="/landing/rules" element={<Rules />} />
+
                     <Route path="/landing/support" element={<Support />} />
                     <Route path="*" element={<GameUI />} />
                 </Routes>
