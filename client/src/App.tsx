@@ -19,6 +19,7 @@ import {
 } from "@dojoengine/sdk/react";
 import { addAddressPadding, CairoCustomEnum } from "starknet";
 import { Events } from "./events.tsx";
+import PoolsPage from "./shared/sidebar/pools/page.tsx";
 
 function GameUI() {
     const { useDojoStore, client } = useDojoSDK();
@@ -169,6 +170,7 @@ function App() {
                     <Route path="*" element={<GameUI />} />
                 </Routes>
             </div>
+            <PoolsPage />
              <Footer />
         </div>
     );
