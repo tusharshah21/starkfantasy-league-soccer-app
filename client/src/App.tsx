@@ -13,6 +13,7 @@ import {
 } from "@dojoengine/sdk/react";
 import { addAddressPadding, CairoCustomEnum } from "starknet";
 import { Events } from "./events.tsx";
+import PoolsPage from "./shared/sidebar/pools/page.tsx";
 
 /**
  * Main application component that provides game functionality and UI.
@@ -212,6 +213,7 @@ function App() {
                 {/* // Here sdk is passed as props but this can be done via contexts */}
                 <HistoricalEvents />
             </div>
+            <PoolsPage />
         </div>
     );
 }
