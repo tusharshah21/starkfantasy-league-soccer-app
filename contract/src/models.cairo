@@ -1,5 +1,44 @@
 use starknet::{ContractAddress};
 
+
+#[derive(Copy, Drop, Serde, PartialEq)]
+#[dojo::model]
+struct User {
+    id: ContractAddress,
+    username: felt252,
+    tournaments_won: u16,
+    created_at: u64,
+    last_connection: u64,
+}
+
+impl User {
+    fn new(id: ContractAddress, username: felt252, created_at: u64) -> User {
+        User {
+            id,
+            username,
+            tournaments_won: 0,
+            created_at,
+            last_connection: created_at,
+        }
+    }
+
+    fn update_last_connection(ref self: User, new_time: u64) -> User {
+        User {
+            last_connection: new_time,
+            ..*self
+        }
+    }
+
+    fn increment_tournaments_won(ref self: User) -> User {
+        User {
+            tournaments_won: self.tournaments_won + 1,
+            ..*self
+        }
+    }
+}
+
+
+
 #[derive(Copy, Drop, Serde, Debug)]
 #[dojo::model]
 pub struct Moves {
