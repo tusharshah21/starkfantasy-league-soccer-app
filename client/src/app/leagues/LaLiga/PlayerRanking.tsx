@@ -72,6 +72,7 @@ export default function PlayerRanking() {
 
                     <ContentCard>
                         <Podium />
+                        <RankingTable />
                     </ContentCard>
                 </div>
             </div>
@@ -92,11 +93,10 @@ const PodiumPlayer = ({
     player: Player;
     position: number;
 }) => {
-    
     const responsiveHeights = [
-        "h-40 sm:h-40 lg:h-52 xl:h-[15.625rem]", 
-        "h-36 sm:h-36 lg:h-44 xl:h-[12.5rem]", 
-        "h-32 sm:h-32 lg:h-36 xl:h-[9.375rem]", 
+        "h-40 sm:h-40 lg:h-52 xl:h-[15.625rem]",
+        "h-36 sm:h-36 lg:h-44 xl:h-[12.5rem]",
+        "h-32 sm:h-32 lg:h-36 xl:h-[9.375rem]",
     ];
 
     return (
@@ -202,6 +202,58 @@ const Podium = () => (
                     />
                 );
             })}
+        </div>
+    </div>
+);
+
+const RankingTable = () => (
+    <div className="rounded-lg sm:rounded-xl lg:rounded-2xl xl:rounded-[0.9375rem] overflow-hidden w-full max-w-[81.25rem] mx-auto mb-4 sm:mb-5">
+        {/* Mobile: Horizontal scroll */}
+        <div className="overflow-x-auto sm:overflow-x-visible">
+            <table className="w-full sm:w-full border-collapse min-w-[480px] sm:min-w-0">
+                <thead>
+                    <tr className="flex justify-between bg-slate-700 px-4 sm:px-8 lg:px-12 xl:px-[3.125rem] py-2 sm:py-3 lg:py-3 xl:py-[0.625rem]">
+                        {["Position", "Username", "Points", "Reward"].map(
+                            (header, index) => (
+                                <th
+                                    key={header}
+                                    className={`font-open-sans font-bold text-white text-xl leading-[1.875rem] text-left ${
+                                        index === 1
+                                            ? "min-w-[12.5rem]"
+                                            : "min-w-[6.25rem]"
+                                    }`}
+                                >
+                                    {header}
+                                </th>
+                            )
+                        )}
+                    </tr>
+                </thead>
+                <tbody>
+                    {remaining.map((player, index) => {
+                        const position = index + 4;
+                        return (
+                            <tr
+                                key={player.username}
+                                className="flex justify-between bg-slate-800 px-4 sm:px-8 lg:px-12 xl:px-[3.125rem] py-3 sm:py-4 lg:py-4 xl:py-[0.9375rem]"
+                            >
+                                <td className="text-xl-custom font-normal text-gray-300 leading-[1.875rem] font-open-sans min-w-[6.25rem]">
+                                    {position}º
+                                </td>
+                                <td className="text-xl-custom font-normal text-gray-300 leading-[1.875rem] font-open-sans min-w-[12.5rem] truncate">
+                                    {player.username}
+                                </td>
+                                <td className="text-xl-custom font-normal text-gray-300 leading-[1.875rem] font-open-sans min-w-[6.25rem]">
+                                    {formatPoints(player.points)}
+                                </td>
+                                <td className="text-xl-custom font-bold text-gray-300 leading-[1.875rem] font-open-sans min-w-[6.25rem]">
+                                    {formatReward(player.reward)}
+                                </td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
         </div>
     </div>
 );
