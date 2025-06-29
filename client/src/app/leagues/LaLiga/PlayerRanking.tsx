@@ -39,3 +39,7 @@ const formatPoints = (points: number) =>
 
 const formatReward = (reward: number) =>
     reward === 0 ? "-" : `${reward.toLocaleString()} STRK`;
+
+export default function PlayerRanking() {
+    return <div>PlayerRanking</div>;
+}
