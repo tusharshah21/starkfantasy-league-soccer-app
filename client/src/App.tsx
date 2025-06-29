@@ -215,8 +215,8 @@ function GameUI() {
 
 function App() {
     return (
-        <div className="bg-black min-h-screen w-full p-4 sm:p-8">
-            <div className="max-w-7xl mx-auto">
+        <div className="bg-black min-h-screen w-full">
+            <div className="">
                 <Routes>
                     <Route path="/landing/rules" element={<Rules />} />
 
@@ -228,8 +228,8 @@ function App() {
                     <Route path="*" element={<GameUI />} />
                 </Routes>
             </div>
-            <PoolsPage />
-            <Footer />
+            {/* <PoolsPage /> */}
+            {/* <Footer /> */}
         </div>
     );
 }
