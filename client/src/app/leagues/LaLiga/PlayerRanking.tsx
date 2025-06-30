@@ -150,7 +150,7 @@ function PodiumPlayer({
                         </div>
                     </div>
                 </div>
-                <h3 className="text-white text-3xl lg:text-2xl-custom font-exo-2 font-medium text-center">
+                <h3 className="text-white text-3xl min-h-12 h-full flex items-center justify-center lg:text-2xl-custom font-exo-2 font-medium text-center">
                     {player.username}
                 </h3>
             </div>
