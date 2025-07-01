@@ -20,6 +20,7 @@ import {
 import { addAddressPadding, CairoCustomEnum } from "starknet";
 import { Events } from "./events.tsx";
 import PoolsPage from "./shared/sidebar/pools/page.tsx";
+import LigueOne from "./app/leagues/ligueOne/ligueOne";
 
 function GameUI() {
     const { useDojoStore, client } = useDojoSDK();
@@ -165,8 +166,8 @@ function App() {
             <div className="max-w-7xl mx-auto">
                 <Routes>
                     <Route path="/landing/rules" element={<Rules />} />
-
                     <Route path="/landing/support" element={<Support />} />
+                    <Route path="/leagues/ligueOne" element={<LigueOne />} />
                     <Route path="*" element={<GameUI />} />
                 </Routes>
             </div>
