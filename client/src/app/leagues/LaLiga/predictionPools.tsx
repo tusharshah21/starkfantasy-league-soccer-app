@@ -22,13 +22,7 @@ const PredictionPools = () => {
         { name: "Sun", value: 200 },
     ];
 
-    const sidebarItems = [
-        { name: "League", icon: Home },
-        { name: "Team", icon: Users },
-        { name: "Pools", icon: Coins },
-        { name: "Market", icon: ShoppingCart },
-        { name: "Results", icon: Trophy },
-    ];
+   
 
     return (
         <div
@@ -39,7 +33,6 @@ const PredictionPools = () => {
             <div className="flex  w-full">
                 {/* Sidebar: vertical on desktop, horizontal on mobile */}
                 <Sidebar
-                    sidebarItems={sidebarItems}
                     activeSidebarItem={activeSidebarItem}
                     setActiveSidebarItem={setActiveSidebarItem}
                 />
