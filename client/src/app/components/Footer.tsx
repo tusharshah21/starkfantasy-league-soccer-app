@@ -3,7 +3,7 @@ import { FaGithub, FaTelegramPlane, FaDiscord } from "react-icons/fa";
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-900 text-white py-6 mt-16">
+        <footer className="bg-gray-900 text-white py-6">
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
                 {/* Left: Logo + Name */}
                 <div className="flex items-center gap-2">
