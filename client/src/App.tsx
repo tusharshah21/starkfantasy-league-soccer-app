@@ -20,6 +20,7 @@ import { addAddressPadding, CairoCustomEnum } from "starknet";
 import { Events } from "./events.tsx";
 import PoolsPage from "./shared/sidebar/pools/page.tsx";
 import PlayerRanking from "./app/leagues/LaLiga/PlayerRanking.tsx";
+import BundesligaPage from "./app/leagues/bundesliga/BundesligaPage.tsx";
 
 function GameUI() {
     const { useDojoStore, client } = useDojoSDK();
@@ -224,6 +225,10 @@ function App() {
                     <Route
                         path="/leagues/laliga/players"
                         element={<PlayerRanking />}
+                    />
+                    <Route
+                        path="/leagues/bundesliga"
+                        element={<BundesligaPage />}
                     />
                     <Route path="*" element={<GameUI />} />
                 </Routes>
