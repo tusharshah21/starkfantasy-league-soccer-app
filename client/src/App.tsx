@@ -19,8 +19,10 @@ import {
 import { addAddressPadding, CairoCustomEnum } from "starknet";
 import { Events } from "./events.tsx";
 import PoolsPage from "./shared/sidebar/pools/page.tsx";
+import PredictionPools from "./app/leagues/LaLiga/predictionPools";
 import PlayerRanking from "./app/leagues/LaLiga/PlayerRanking.tsx";
 import BundesligaPage from "./app/leagues/bundesliga/BundesligaPage.tsx";
+
 
 function GameUI() {
     const { useDojoStore, client } = useDojoSDK();
@@ -216,23 +218,27 @@ function GameUI() {
 
 function App() {
     return (
+
         <div className="bg-black min-h-screen w-full">
             <div className="">
                 <Routes>
                     <Route path="/landing/rules" element={<Rules />} />
-
                     <Route path="/landing/support" element={<Support />} />
                     <Route
                         path="/leagues/laliga/players"
                         element={<PlayerRanking />}
                     />
                     <Route
+                        path="/leagues/LaLiga/predictionPools"
+                        element={<PredictionPools />}
                         path="/leagues/bundesliga"
                         element={<BundesligaPage />}
+
                     />
                     <Route path="*" element={<GameUI />} />
                 </Routes>
             </div>
+
             {/* <PoolsPage /> */}
             {/* <Footer /> */}
         </div>

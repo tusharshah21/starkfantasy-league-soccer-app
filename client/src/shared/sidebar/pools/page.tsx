@@ -161,7 +161,13 @@ export default function PoolsPage() {
             rewardRate: "13.5%",
             secondaryRate: "72.3%",
             points: 310,
-            stats: { goals: 85, assists: 70, dribbling: 90, speed: 75, hitting: 60 }
+            stats: {
+                goals: 85,
+                assists: 70,
+                dribbling: 90,
+                speed: 75,
+                hitting: 60,
+            },
         },
         {
             id: "2",
@@ -170,7 +176,13 @@ export default function PoolsPage() {
             rewardRate: "13.5%",
             secondaryRate: "72.3%",
             points: 310,
-            stats: { goals: 60, assists: 95, dribbling: 70, speed: 85, hitting: 80 }
+            stats: {
+                goals: 60,
+                assists: 95,
+                dribbling: 70,
+                speed: 85,
+                hitting: 80,
+            },
         },
         {
             id: "3",
@@ -179,7 +191,13 @@ export default function PoolsPage() {
             rewardRate: "13.5%",
             secondaryRate: "72.3%",
             points: 310,
-            stats: { goals: 70, assists: 80, dribbling: 85, speed: 90, hitting: 75 }
+            stats: {
+                goals: 70,
+                assists: 80,
+                dribbling: 85,
+                speed: 90,
+                hitting: 75,
+            },
         },
         {
             id: "4",
@@ -188,7 +206,13 @@ export default function PoolsPage() {
             rewardRate: "13.5%",
             secondaryRate: "72.3%",
             points: 310,
-            stats: { goals: 95, assists: 60, dribbling: 75, speed: 70, hitting: 85 }
+            stats: {
+                goals: 95,
+                assists: 60,
+                dribbling: 75,
+                speed: 70,
+                hitting: 85,
+            },
         },
         {
             id: "5",
@@ -197,7 +221,13 @@ export default function PoolsPage() {
             rewardRate: "13.5%",
             secondaryRate: "72.3%",
             points: 310,
-            stats: { goals: 80, assists: 75, dribbling: 60, speed: 95, hitting: 70 }
+            stats: {
+                goals: 80,
+                assists: 75,
+                dribbling: 60,
+                speed: 95,
+                hitting: 70,
+            },
         },
         {
             id: "6",
@@ -206,7 +236,13 @@ export default function PoolsPage() {
             rewardRate: "13.5%",
             secondaryRate: "72.3%",
             points: 310,
-            stats: { goals: 75, assists: 85, dribbling: 95, speed: 60, hitting: 90 }
+            stats: {
+                goals: 75,
+                assists: 85,
+                dribbling: 95,
+                speed: 60,
+                hitting: 90,
+            },
         },
         {
             id: "7",
@@ -215,7 +251,13 @@ export default function PoolsPage() {
             rewardRate: "13.5%",
             secondaryRate: "72.3%",
             points: 310,
-            stats: { goals: 90, assists: 70, dribbling: 80, speed: 85, hitting: 65 }
+            stats: {
+                goals: 90,
+                assists: 70,
+                dribbling: 80,
+                speed: 85,
+                hitting: 65,
+            },
         },
         {
             id: "8",
@@ -224,7 +266,13 @@ export default function PoolsPage() {
             rewardRate: "13.5%",
             secondaryRate: "72.3%",
             points: 310,
-            stats: { goals: 65, assists: 90, dribbling: 70, speed: 75, hitting: 95 }
+            stats: {
+                goals: 65,
+                assists: 90,
+                dribbling: 70,
+                speed: 75,
+                hitting: 95,
+            },
         },
         {
             id: "9",
@@ -233,7 +281,13 @@ export default function PoolsPage() {
             rewardRate: "13.5%",
             secondaryRate: "72.3%",
             points: 310,
-            stats: { goals: 85, assists: 65, dribbling: 85, speed: 80, hitting: 75 }
+            stats: {
+                goals: 85,
+                assists: 65,
+                dribbling: 85,
+                speed: 80,
+                hitting: 75,
+            },
         },
         {
             id: "10",
@@ -242,7 +296,13 @@ export default function PoolsPage() {
             rewardRate: "13.5%",
             secondaryRate: "72.3%",
             points: 310,
-            stats: { goals: 70, assists: 85, dribbling: 75, speed: 65, hitting: 85 }
+            stats: {
+                goals: 70,
+                assists: 85,
+                dribbling: 75,
+                speed: 65,
+                hitting: 85,
+            },
         },
     ];
 
@@ -292,42 +352,50 @@ export default function PoolsPage() {
     // Function to calculate radar chart coordinates based on stats
     const calculateRadarCoordinates = (stats: any) => {
         if (!stats) return { polygon: "", circles: [] };
-        
+
         // Convert percentages (0-100) to coordinates
         // Center is at (100, 100), outer radius is 80
         const center = { x: 100, y: 100 };
         const maxRadius = 80;
-        
+
         // Pentagon vertices angles (starting from top, going clockwise)
         const angles = [
-            -Math.PI / 2,           // Goals (top)
-            -Math.PI / 2 + (2 * Math.PI / 5),     // Assists (top right)
-            -Math.PI / 2 + (4 * Math.PI / 5),     // Dribbling (bottom right)
-            -Math.PI / 2 + (6 * Math.PI / 5),     // Speed (bottom left)
-            -Math.PI / 2 + (8 * Math.PI / 5)      // Hitting (top left)
+            -Math.PI / 2, // Goals (top)
+            -Math.PI / 2 + (2 * Math.PI) / 5, // Assists (top right)
+            -Math.PI / 2 + (4 * Math.PI) / 5, // Dribbling (bottom right)
+            -Math.PI / 2 + (6 * Math.PI) / 5, // Speed (bottom left)
+            -Math.PI / 2 + (8 * Math.PI) / 5, // Hitting (top left)
         ];
-        
-        const statValues = [stats.goals, stats.assists, stats.dribbling, stats.speed, stats.hitting];
-        
+
+        const statValues = [
+            stats.goals,
+            stats.assists,
+            stats.dribbling,
+            stats.speed,
+            stats.hitting,
+        ];
+
         const coordinates = statValues.map((value, index) => {
             const radius = (value / 100) * maxRadius;
             const x = center.x + radius * Math.cos(angles[index]);
             const y = center.y + radius * Math.sin(angles[index]);
             return { x, y };
         });
-        
-        const polygonPoints = coordinates.map(coord => `${coord.x},${coord.y}`).join(' ');
-        
+
+        const polygonPoints = coordinates
+            .map((coord) => `${coord.x},${coord.y}`)
+            .join(" ");
+
         return {
             polygon: polygonPoints,
-            circles: coordinates
+            circles: coordinates,
         };
     };
 
     // Get selected player's stats for radar chart
     const getSelectedPlayerStats = () => {
         if (!selectedPlayer) return null;
-        const player = players.find(p => p.id === selectedPlayer);
+        const player = players.find((p) => p.id === selectedPlayer);
         return player ? player.stats : null;
     };
 
@@ -606,9 +674,13 @@ export default function PoolsPage() {
             {/* Special Pool Modal */}
             {selectedSpecial && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/70">
-                    <div className="relative w-[1200px] h-[700px]  rounded-lg overflow-hidden" style={{
-        background: 'linear-gradient(180deg, #1E2939 0%, #020618 100%)',
-      }}>
+                    <div
+                        className="relative w-[1200px] h-[700px]  rounded-lg overflow-hidden"
+                        style={{
+                            background:
+                                "linear-gradient(180deg, #1E2939 0%, #020618 100%)",
+                        }}
+                    >
                         {/* Close button */}
                         <button
                             onClick={closeSpecialModal}
@@ -620,151 +692,168 @@ export default function PoolsPage() {
                         <div className="flex h-full">
                             {/* Left side - Player details and betting */}
                             <div className="w-[60%] rounded-lg overflow-hidden flex flex-col">
-                            <div className=" ml-6 mt-8  rounded-lg p-3 flex bg-[#0F172B] items-start justify-start gap-2">
-
-
-                                {/* Player Image */}
-                                <div className="mt-12 bg-gray-500 w-[180px] h-[180px] ml-[10px]  rounded-lg flex items-center justify-center">
-                                    <div className="text-gray-400 ">
-                                        <svg
-                                            width="80"
-                                            height="80"
-                                            viewBox="0 0 24 24"
-                                            fill="currentColor"
-                                        >
-                                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
-                                        </svg>
-                                    </div>
-                                </div>
-
-                                <div className="w-[70%]">
-                                    <div className="mb-3">
-                                        <h2 className="text-white/40 text-center text-4xl font-normal mb-3">
-                                            {selectedPlayer ? players.find(p => p.id === selectedPlayer)?.name || "Name" : "Name"}
-                                        </h2>
-                                        <div className="w-full h-0.5 bg-[#FF6900]/30"></div>
-                                    </div>
-
-                                    {/* STATS */}
-                                    <h3 className="text-[#372AAC]/40 text-2xl font-bold mb-3 text-center tracking-wider">
-                                        STATS
-                                    </h3>
-
-                                    {/* Spider/Radar Chart */}
-                                    <div className="flex  flex-col justify-center items-center mb-8">
-                                        <div className="relative w-48 h-48">
+                                <div className=" ml-6 mt-8  rounded-lg p-3 flex bg-[#0F172B] items-start justify-start gap-2">
+                                    {/* Player Image */}
+                                    <div className="mt-12 bg-gray-500 w-[180px] h-[180px] ml-[10px]  rounded-lg flex items-center justify-center">
+                                        <div className="text-gray-400 ">
                                             <svg
-                                                viewBox="0 0 200 200"
-                                                className="w-full h-full"
+                                                width="80"
+                                                height="80"
+                                                viewBox="0 0 24 24"
+                                                fill="currentColor"
                                             >
-                                                {/* Pentagon grid lines */}
-                                                <defs>
-                                                    <pattern
-                                                        id="grid"
-                                                        patternUnits="userSpaceOnUse"
-                                                        width="40"
-                                                        height="40"
-                                                    >
-                                                        <path
-                                                            d="M 40 0 L 0 0 0 40"
-                                                            fill="none"
-                                                            stroke="#1E2939"
-                                                            strokeWidth="1"
-                                                        />
-                                                    </pattern>
-                                                </defs>
+                                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
+                                            </svg>
+                                        </div>
+                                    </div>
 
-                                                {/* Outer pentagon */}
-                                                <polygon
-                                                    points="100,20 164,68 136,148 64,148 36,68"
-                                                    fill="none"
-                                                    stroke="#1E2939"
-                                                    strokeWidth="1"
-                                                />
+                                    <div className="w-[70%]">
+                                        <div className="mb-3">
+                                            <h2 className="text-white/40 text-center text-4xl font-normal mb-3">
+                                                {selectedPlayer
+                                                    ? players.find(
+                                                          (p) =>
+                                                              p.id ===
+                                                              selectedPlayer
+                                                      )?.name || "Name"
+                                                    : "Name"}
+                                            </h2>
+                                            <div className="w-full h-0.5 bg-[#FF6900]/30"></div>
+                                        </div>
 
-                                                {/* Middle pentagon */}
-                                                <polygon
-                                                    points="100,44 140,78 124,132 76,132 60,78"
-                                                    fill="none"
-                                                    stroke="#1E2939"
-                                                    strokeWidth="1"
-                                                />
+                                        {/* STATS */}
+                                        <h3 className="text-[#372AAC]/40 text-2xl font-bold mb-3 text-center tracking-wider">
+                                            STATS
+                                        </h3>
 
-                                                {/* Inner pentagon */}
-                                                <polygon
-                                                    points="100,68 116,88 112,116 88,116 84,88"
-                                                    fill="none"
-                                                    stroke="#1E2939"
-                                                    strokeWidth="1"
-                                                />
-
-                                                {/* Connecting lines from center */}
-                                                <line
-                                                    x1="100"
-                                                    y1="100"
-                                                    x2="100"
-                                                    y2="20"
-                                                    stroke="#1E2939"
-                                                    strokeWidth="1"
-                                                />
-                                                <line
-                                                    x1="100"
-                                                    y1="100"
-                                                    x2="164"
-                                                    y2="68"
-                                                    stroke="#1E2939"
-                                                    strokeWidth="1"
-                                                />
-                                                <line
-                                                    x1="100"
-                                                    y1="100"
-                                                    x2="136"
-                                                    y2="148"
-                                                    stroke="#1E2939"
-                                                    strokeWidth="1"
-                                                />
-                                                <line
-                                                    x1="100"
-                                                    y1="100"
-                                                    x2="64"
-                                                    y2="148"
-                                                    stroke="#1E2939"
-                                                    strokeWidth="1"
-                                                />
-                                                <line
-                                                    x1="100"
-                                                    y1="100"
-                                                    x2="36"
-                                                    y2="68"
-                                                    stroke="#1E2939"
-                                                    strokeWidth="1"
-                                                />
-
-                                                {/* Data polygon (dynamic based on selected player) */}
-                                                {selectedPlayer && (
-                                                    <>
-                                                        <polygon
-                                                            points={radarData.polygon}
-                                                            fill="rgba(249, 115, 22, 0.2)"
-                                                            stroke="#E17100"
-                                                            strokeWidth="2"
-                                                        />
-                                                        
-                                                        {/* Data points */}
-                                                        {radarData.circles.map((circle, index) => (
-                                                            <circle
-                                                                key={index}
-                                                                cx={circle.x}
-                                                                cy={circle.y}
-                                                                r="3"
-                                                                fill="#E17100"
+                                        {/* Spider/Radar Chart */}
+                                        <div className="flex  flex-col justify-center items-center mb-8">
+                                            <div className="relative w-48 h-48">
+                                                <svg
+                                                    viewBox="0 0 200 200"
+                                                    className="w-full h-full"
+                                                >
+                                                    {/* Pentagon grid lines */}
+                                                    <defs>
+                                                        <pattern
+                                                            id="grid"
+                                                            patternUnits="userSpaceOnUse"
+                                                            width="40"
+                                                            height="40"
+                                                        >
+                                                            <path
+                                                                d="M 40 0 L 0 0 0 40"
+                                                                fill="none"
+                                                                stroke="#1E2939"
+                                                                strokeWidth="1"
                                                             />
-                                                        ))}
-                                                    </>
-                                                )}
-                                                
-                                                {/* Default sample data when no player selected */}
-                                                {/* {!selectedPlayer && (
+                                                        </pattern>
+                                                    </defs>
+
+                                                    {/* Outer pentagon */}
+                                                    <polygon
+                                                        points="100,20 164,68 136,148 64,148 36,68"
+                                                        fill="none"
+                                                        stroke="#1E2939"
+                                                        strokeWidth="1"
+                                                    />
+
+                                                    {/* Middle pentagon */}
+                                                    <polygon
+                                                        points="100,44 140,78 124,132 76,132 60,78"
+                                                        fill="none"
+                                                        stroke="#1E2939"
+                                                        strokeWidth="1"
+                                                    />
+
+                                                    {/* Inner pentagon */}
+                                                    <polygon
+                                                        points="100,68 116,88 112,116 88,116 84,88"
+                                                        fill="none"
+                                                        stroke="#1E2939"
+                                                        strokeWidth="1"
+                                                    />
+
+                                                    {/* Connecting lines from center */}
+                                                    <line
+                                                        x1="100"
+                                                        y1="100"
+                                                        x2="100"
+                                                        y2="20"
+                                                        stroke="#1E2939"
+                                                        strokeWidth="1"
+                                                    />
+                                                    <line
+                                                        x1="100"
+                                                        y1="100"
+                                                        x2="164"
+                                                        y2="68"
+                                                        stroke="#1E2939"
+                                                        strokeWidth="1"
+                                                    />
+                                                    <line
+                                                        x1="100"
+                                                        y1="100"
+                                                        x2="136"
+                                                        y2="148"
+                                                        stroke="#1E2939"
+                                                        strokeWidth="1"
+                                                    />
+                                                    <line
+                                                        x1="100"
+                                                        y1="100"
+                                                        x2="64"
+                                                        y2="148"
+                                                        stroke="#1E2939"
+                                                        strokeWidth="1"
+                                                    />
+                                                    <line
+                                                        x1="100"
+                                                        y1="100"
+                                                        x2="36"
+                                                        y2="68"
+                                                        stroke="#1E2939"
+                                                        strokeWidth="1"
+                                                    />
+
+                                                    {/* Data polygon (dynamic based on selected player) */}
+                                                    {selectedPlayer && (
+                                                        <>
+                                                            <polygon
+                                                                points={
+                                                                    radarData.polygon
+                                                                }
+                                                                fill="rgba(249, 115, 22, 0.2)"
+                                                                stroke="#E17100"
+                                                                strokeWidth="2"
+                                                            />
+
+                                                            {/* Data points */}
+                                                            {radarData.circles.map(
+                                                                (
+                                                                    circle,
+                                                                    index
+                                                                ) => (
+                                                                    <circle
+                                                                        key={
+                                                                            index
+                                                                        }
+                                                                        cx={
+                                                                            circle.x
+                                                                        }
+                                                                        cy={
+                                                                            circle.y
+                                                                        }
+                                                                        r="3"
+                                                                        fill="#E17100"
+                                                                    />
+                                                                )
+                                                            )}
+                                                        </>
+                                                    )}
+
+                                                    {/* Default sample data when no player selected */}
+                                                    {/* {!selectedPlayer && (
                                                     <>
                                                         <polygon
                                                             points="100,35 150,75 125,135 75,135 50,75"
@@ -780,68 +869,66 @@ export default function PoolsPage() {
                                                         <circle cx="50" cy="75" r="3" fill="#E17100"/>
                                                     </>
                                                 )} */}
-                                            </svg>
+                                                </svg>
 
-                                            {/* Labels positioned around the pentagon */}
-                                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2">
-                                                <span className="text-[#E17100]/40 text-xs font-medium">
-                                                    Goals
-                                                </span>
+                                                {/* Labels positioned around the pentagon */}
+                                                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2">
+                                                    <span className="text-[#E17100]/40 text-xs font-medium">
+                                                        Goals
+                                                    </span>
+                                                </div>
+                                                <div className="absolute top-6 right-0 transform translate-x-2">
+                                                    <span className="text-[#E17100]/40 text-xs font-medium">
+                                                        Assists
+                                                    </span>
+                                                </div>
+                                                <div className="absolute bottom-6 right-4 transform translate-x-2">
+                                                    <span className="text-[#E17100]/40 text-xs font-medium">
+                                                        Dribbling
+                                                    </span>
+                                                </div>
+                                                <div className="absolute bottom-6 left-4 transform -translate-x-2">
+                                                    <span className="text-[#E17100]/40 text-xs font-medium">
+                                                        Speed
+                                                    </span>
+                                                </div>
+                                                <div className="absolute top-6 left-0 transform -translate-x-2">
+                                                    <span className="text-[#E17100]/40 text-xs font-medium">
+                                                        Hitting
+                                                    </span>
+                                                </div>
                                             </div>
-                                            <div className="absolute top-6 right-0 transform translate-x-2">
-                                                <span className="text-[#E17100]/40 text-xs font-medium">
-                                                    Assists
-                                                </span>
-                                            </div>
-                                            <div className="absolute bottom-6 right-4 transform translate-x-2">
-                                                <span className="text-[#E17100]/40 text-xs font-medium">
-                                                    Dribbling
-                                                </span>
-                                            </div>
-                                            <div className="absolute bottom-6 left-4 transform -translate-x-2">
-                                                <span className="text-[#E17100]/40 text-xs font-medium">
-                                                    Speed
-                                                </span>
-                                            </div>
-                                            <div className="absolute top-6 left-0 transform -translate-x-2">
-                                                <span className="text-[#E17100]/40 text-xs font-medium">
-                                                    Hitting
-                                                </span>
-                                            </div>
+                                            <div className="w-full h-1  bg-[#000000]/30"></div>
                                         </div>
-                                        <div className="w-full h-1  bg-[#000000]/30"></div>
                                     </div>
-                                    
                                 </div>
+                                <div className="mt-16 ">
+                                    <div className="flex justify-between items-center mx-auto w-[50%] mb-3">
+                                        <span className="text-white text-xl">
+                                            Points to bet:
+                                        </span>
+                                        <span className="text-[#979BA1] text-[15px]">
+                                            {availablePoints} available
+                                        </span>
+                                    </div>
+                                    <div className="w-[50%] mx-auto h-12 bg-[#1E2939] rounded-full border-2 border-[#E17100] px-4 mb-6">
+                                        <input
+                                            type="text"
+                                            value={betPoints}
+                                            onChange={(e) =>
+                                                handleBetPointsChange(
+                                                    e.target.value
+                                                )
+                                            }
+                                            className="w-full h-full bg-transparent text-white focus:outline-none"
+                                        />
+                                    </div>
+                                    <button className="w-[90%] ml-8 mx-auto mt-3 bg-[#A03305] hover:bg-orange-600 text-white font-medium py-3 rounded-lg transition-colors">
+                                        Select Player
+                                    </button>
                                 </div>
-                                                            <div className="mt-16 ">
-                                <div className="flex justify-between items-center mx-auto w-[50%] mb-3">
-                                    <span className="text-white text-xl">
-                                        Points to bet:
-                                    </span>
-                                    <span className="text-[#979BA1] text-[15px]">
-                                        {availablePoints} available
-                                    </span>
-                                </div>
-                                <div className="w-[50%] mx-auto h-12 bg-[#1E2939] rounded-full border-2 border-[#E17100] px-4 mb-6">
-                                    <input
-                                        type="text"
-                                        value={betPoints}
-                                        onChange={(e) =>
-                                            handleBetPointsChange(
-                                                e.target.value
-                                            )
-                                        }
-                                        className="w-full h-full bg-transparent text-white focus:outline-none"
-                                    />
-                                </div>
-                                <button className="w-[90%] ml-8 mx-auto mt-3 bg-[#A03305] hover:bg-orange-600 text-white font-medium py-3 rounded-lg transition-colors">
-                                    Select Player
-                                </button>
-                            </div>
                             </div>
                             {/* Points to bet */}
-
 
                             {/* Right side - Player list */}
                             <div className="w-2/3 p-8">
@@ -880,7 +967,7 @@ export default function PoolsPage() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                               
+
                                                 {/* <div className="flex items-center justify-center">
                                                     <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
                                                         selectedPlayer === player.id 
@@ -900,14 +987,13 @@ export default function PoolsPage() {
                                                     </div>
                                                 </div>
                                                 <div>
-                                                     <div className="flex flex-col">
-                                                        <span >
+                                                    <div className="flex flex-col">
+                                                        <span>
                                                             {
                                                                 player.secondaryRate
                                                             }
                                                         </span>
                                                     </div>
-                                                    
                                                 </div>
                                                 <div className="flex items-center justify-center">
                                                     {player.points}
