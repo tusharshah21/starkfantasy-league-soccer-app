@@ -2,7 +2,7 @@ import { KeysClause, ToriiQueryBuilder } from "@dojoengine/sdk";
 import { Routes, Route } from "react-router-dom";
 import Support from "./app/landing/support/Support";
 import { Link } from "react-router-dom";
-import Footer from "./app/components/Footer";
+// import Footer from "./app/components/Footer";
 import Rules from "./app/landing/rules/Rules";
 
 import { ModelsMapping } from "./typescript/models.gen.ts";
@@ -18,6 +18,8 @@ import {
 } from "@dojoengine/sdk/react";
 import { addAddressPadding, CairoCustomEnum } from "starknet";
 import { Events } from "./events.tsx";
+// import PoolsPage from "./shared/sidebar/pools/page.tsx";
+import LigueOne from "./app/leagues/ligueOne/ligueOne";
 import PoolsPage from "./shared/sidebar/pools/page.tsx";
 import PredictionPools from "./app/leagues/LaLiga/predictionPools";
 import PlayerRanking from "./app/leagues/LaLiga/PlayerRanking.tsx";
@@ -224,6 +226,7 @@ function App() {
                 <Routes>
                     <Route path="/landing/rules" element={<Rules />} />
                     <Route path="/landing/support" element={<Support />} />
+                    <Route path="/leagues/ligueOne" element={<LigueOne />} />
                     <Route
                         path="/leagues/laliga/players"
                         element={<PlayerRanking />}
