@@ -24,7 +24,7 @@ import PoolsPage from "./shared/sidebar/pools/page.tsx";
 import PredictionPools from "./app/leagues/LaLiga/predictionPools";
 import PlayerRanking from "./app/leagues/LaLiga/PlayerRanking.tsx";
 import BundesligaPage from "./app/leagues/bundesliga/BundesligaPage.tsx";
-
+import LaligaPage from "./app/leagues/laligas/LaligaPage.tsx";
 
 function GameUI() {
     const { useDojoStore, client } = useDojoSDK();
@@ -220,7 +220,6 @@ function GameUI() {
 
 function App() {
     return (
-
         <div className="bg-black min-h-screen w-full">
             <div className="">
                 <Routes>
@@ -236,7 +235,10 @@ function App() {
                         element={<PredictionPools />}
                         path="/leagues/bundesliga"
                         element={<BundesligaPage />}
-
+                    />
+                    <Route
+                        path="/leagues/laligas/laliga"
+                        element={<LaligaPage />}
                     />
                     <Route path="*" element={<GameUI />} />
                 </Routes>
