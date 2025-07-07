@@ -21,6 +21,7 @@ import { Events } from "./events.tsx";
 import PoolsPage from "./shared/sidebar/pools/page.tsx";
 import PredictionPools from "./app/leagues/LaLiga/predictionPools";
 import PlayerRanking from "./app/leagues/LaLiga/PlayerRanking.tsx";
+import BundesligaPage from "./app/leagues/bundesliga/BundesligaPage.tsx";
 
 
 function GameUI() {
@@ -230,6 +231,9 @@ function App() {
                     <Route
                         path="/leagues/LaLiga/predictionPools"
                         element={<PredictionPools />}
+                        path="/leagues/bundesliga"
+                        element={<BundesligaPage />}
+
                     />
                     <Route path="*" element={<GameUI />} />
                 </Routes>
